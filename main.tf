@@ -28,7 +28,6 @@ module "sql-database" {
   source              = "app.terraform.io/synaptic_racing/database/azurerm"
   version             = "2.0.0"
   resource_group_name = data.terraform_remote_state.base_env.outputs.rg-name
-  location            = data.terraform_remote_state.base_env.outputs.rg-location
   db_name             = var.db_name
   sql_admin_username  = var.db_username
   sql_password        = var.db_password
