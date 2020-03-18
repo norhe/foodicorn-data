@@ -25,7 +25,8 @@ resource "random_string" "random" {
 }
 
 module "sql-database" {
-  source              = "Azure/database/azurerm"
+  source              = "app.terraform.io/synaptic_racing/database/azure"
+  version             = "2.0.0"
   resource_group_name = data.terraform_remote_state.base_env.outputs.rg-name
   location            = data.terraform_remote_state.base_env.outputs.rg-location
   db_name             = var.db_name
